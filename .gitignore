@@ -11,4 +11,6 @@ log/production.log
 nbproject/*
 config/deploy/*
 config/deploy.rb
+#public\system\*
+public/system/*
 
