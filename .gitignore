@@ -5,13 +5,13 @@
 # *.[oa]
 # *~
 *Thumbs.db
-log/development.log
-log/production.log
+log\development.log
+log\production.log
 #*.log  # Will exclude all .log files
 nbproject/*
-config/deploy/*
-config/deploy.rb
-#public\system\*
-public/system/*
+config\deploy/*
+config\deploy.rb
+public\system\*
+app\views\/*
 
 
