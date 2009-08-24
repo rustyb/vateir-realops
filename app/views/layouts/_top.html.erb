@@ -1,0 +1,12 @@
+<div class="span-24 last">
+          <%= image_tag '/images/logo.png' %>
+        </div>
+        <h1><%= link_to(image_tag '/images/vateirw.png') %></h1>
+
+        <div id="nav">
+          <ul>
+            <% for page in Page.roots %>
+              <li><%= link_to h(page.name.humanize), view_page_path(page.name.downcase) %></li>
+            <% end %>
+          </ul>
+        </div>

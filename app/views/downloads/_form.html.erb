@@ -1,0 +1,25 @@
+<% form_for @download, :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+  <div id="scaffold_form">
+  <table>
+    <tr>
+      <th><%= f.label :Category %></th>
+      <td><%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => true} %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :name %></th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :description %></th>
+      <td><%= f.text_area :description %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :file %></th>
+      <td><%= f.file_field(:download) %></td>
+    </tr>
+
+  </table>
+  </div>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

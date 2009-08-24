@@ -1,5 +1,5 @@
 class FlightsController < ApplicationController
-  before_filter :login_required, :except => [:index, :show]
+  before_filter :login_required
   
   def index
     @flights = Flight.find(:all, :include => :booking)

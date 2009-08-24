@@ -1,0 +1,19 @@
+<% title 'Charts And Scenery'  %>
+<% for category in @categories %>
+	<h2><%=h category.name %></h2>
+	<p><%=h category.description %></p>
+	<ul>
+	  <% for download in category.downloads %>
+		  <li><%= link_to download.name, download.download.url %></li>
+	  <% end %>
+	</ul>
+<% end %>
+
+<% content_for :side do  %>
+<h2>Information</h2>
+<li>Initial Altitude for RWY 10/28 is FL80</li>
+<li>Transition altitude: 5000ft</li>
+<li>Expect vectors from hold fix's on arrival</li>
+<li>SIDs are full RNAV and not vectored.</li>
+<p>&nbsp;</p>
+<% end %>

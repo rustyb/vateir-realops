@@ -7,6 +7,8 @@
     <%=  stylesheet_link_tag 'realops' %>
     <%=  stylesheet_link_tag 'blueprint/screen', :media => "screen, projection" %>
     <%=  stylesheet_link_tag 'blueprint/print', :media => "print" %>
+    <%= javascript_include_tag :defaults %>
+
     <!--[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
     <%= yield(:head) %>
   </head>
@@ -14,19 +16,7 @@
   <body>
     <div class="container">
       <div id="header" class="span-24 last">
-        <div class="span-24 last">
-          <%= image_tag '/images/logo.png' %>
-        </div>
-        <h1><%= link_to(image_tag '/images/vateirw.png') %></h1>
-
-        <div id="nav">
-          <ul>
-            <% for page in Page.roots %>
-              <li><%= link_to h(page.name), view_page_path(page.name.downcase) %></li>
-            <% end %>
-          </ul>
-        </div>
-
+        <%= render 'layouts/top' %>
       </div>
 
 
@@ -34,19 +24,20 @@
 
       <div id="main_body" class="span-24 last">
         <div class="span-22 prepend-1 append-1">
-          <% unless !logged_in? %>
-            <%= render "layouts/admin" %>
-          <% end %>
-          <div id="flash_messages" class="span-22 last">
-          <%= flash_messages %>
-          </div>
           
-          <%- if show_title? -%>
-            <h1><%=h yield(:title) %></h1>
-          <%- end -%>
         </div>
 
         <div class="span-16 prepend-1">
+          <% unless !logged_in? %>
+            <%= render "layouts/admin" %>
+          <% end %>
+          <div id="flash_messages" class="span-16">
+          <%= flash_messages %>
+          </div>
+
+          <%- if show_title? -%>
+            <h1><%=h yield(:title) %></h1>
+          <%- end -%>
           <%= yield %>
         </div>
         <div id="sidebar" class="span-7 last">

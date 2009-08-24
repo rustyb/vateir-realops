@@ -1,0 +1,19 @@
+<% title "Download" %>
+<p>
+  <strong>Link:</strong>
+  <%= link_to @download.name, h(@download.download.url) %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%=h @download.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @download.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_download_path(@download) %> |
+  <%= link_to "Destroy", @download, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", downloads_path %>
+</p>

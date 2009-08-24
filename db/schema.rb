@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090824112822) do
+ActiveRecord::Schema.define(:version => 20090824174818) do
 
   create_table "bookings", :force => true do |t|
     t.string   "name"
@@ -18,6 +18,30 @@ ActiveRecord::Schema.define(:version => 20090824112822) do
     t.integer  "flight_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_downloads", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "download_id"
+  end
+
+  create_table "downloads", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "download_file_name"
+    t.string   "download_content_type"
+    t.integer  "download_file_size"
+    t.datetime "download_updated_at"
+    t.integer  "category_id"
   end
 
   create_table "flights", :force => true do |t|

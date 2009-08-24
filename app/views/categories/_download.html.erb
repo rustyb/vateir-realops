@@ -1,0 +1,13 @@
+<div class="download">
+  <% for download in @category.downloads %>
+    <% new_or_existing = download.new_record? ? 'new' : 'existing' %>
+    <% prefix = "category[#{new_or_existing}_download_attributes][]" %>
+    <% fields_for prefix, download do |download_form| %>
+      <p>
+        Download Name: <%= download_form.text_field :name %>
+        File: <%= download_form.file_field :download %>
+        <%= link_to_function "remove", "$(this).up('.download').remove()" %>
+      </p>
+    <% end %>
+  <% end %>
+</div>

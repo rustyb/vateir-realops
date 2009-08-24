@@ -1,4 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+  map.charts_scenery 'charts_scenery', :controller => :downloads, :action => :list
+  map.resources :categories
+
+  map.resources :downloads, :collection => {:list => :get}
+
+  map.resources :flight_bookings, :collection => {:departures => :get, :arrivals => :get}
+
   map.legal 'legal', :controller => :pages, :action => 'legal'
   map.flightbooking 'flightbooking', :controller => 'flights'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
