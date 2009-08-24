@@ -43,6 +43,6 @@ production:
   reconnect: false
   database: vateir_realops_production
   pool: 5
-  username: root
-  password: 
+  username: deploy
+  password: rustyswimmer
   host: localhost
