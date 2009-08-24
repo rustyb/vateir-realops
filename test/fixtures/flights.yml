@@ -1,0 +1,27 @@
+one:
+  airline: MyString
+  callsign: MyString
+  dep: MyString
+  arr: MyString
+  dtime: 2009-08-21 23:11:50
+  atime: 2009-08-21 23:11:50
+  aircraft: MyString
+  inbound: false
+  outbound: false
+  booked: false
+  routing: MyText
+  flight_level: MyString
+
+two:
+  airline: MyString
+  callsign: MyString
+  dep: MyString
+  arr: MyString
+  dtime: 2009-08-21 23:11:50
+  atime: 2009-08-21 23:11:50
+  aircraft: MyString
+  inbound: false
+  outbound: false
+  booked: false
+  routing: MyText
+  flight_level: MyString

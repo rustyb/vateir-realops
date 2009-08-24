@@ -1,0 +1,34 @@
+
+  <% title @page.name, false %>
+
+<% if logged_in? %>
+<p>
+    <%= link_to "Edit", edit_page_path(@page) %> |
+    <%= link_to "Destroy", @page, :confirm => 'Are you sure?', :method => :delete %> |
+    <%= link_to "View All Pages", pages_path %>
+</p>
+<% end %>
+<% content_for :side do %>
+  <% unless @page.children.empty? %>
+    <h2>Subnav</h2>
+    <ul class="quiet">
+      <% for page in @page.children %>
+        <li><%= link_to h(page.name), (page.name.downcase) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= @page.side_bar %>
+<% end %>
+
+  <p>
+    <% for page in @page.ancestors.reverse %>
+      <h3><%= link_to h(page.name), (page.name.downcase) %> &gt;</h3>
+    <% end %>
+  </p>
+
+
+  <%= @page.content %>
+
+
+
+

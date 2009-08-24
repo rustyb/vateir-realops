@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>VATeir Realops Site</title>
+    <%=  stylesheet_link_tag 'realops' %>
+    <%=  stylesheet_link_tag 'blueprint/screen', :media => "screen, projection" %>
+    <%=  stylesheet_link_tag 'blueprint/print', :media => "print" %>
+    <!--[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+
+  </head>
+
+  <body>
+    <div class="container">
+     
+      
+      <div class="span-24 last">
+        <%= image_tag '/images/logo.png' %>
+      </div>
+       <div id="header" class="span-24 last">
+        <h1><%= link_to(image_tag '/images/vateirw.png') %></h1>
+        <div id="nav">
+          <ul>
+            <% for page in Page.roots %>
+              <li><%= link_to h(page.name), (page.name.downcase) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div id="main_body" class="span-24">
+        <div class="span-16 prepend-1">
+          <%= yield %>
+          <h1>Dublin Realops 2009</h1>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.</p>
+          <p><%= image_tag "/images/eddf.jpg", :class => 'left' %> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc congue ipsum vestibulum libero. Aenean vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus tempus felis, a ultricies erat ipsum at metus.</p></p>
+        </div>
+        <div id="sidebar" class="span-7 last">
+          <div class="section">
+            <h2>Booking Stats</h2>
+            <ul>
+              <li>Number of Flights Booked (XX)</li>
+              <li>Number of Flights Left (XX)</li>
+            </ul>
+            
+            <h2>Remember</h2>
+            <div class="error">
+            
+            <ul>
+              <li>If departing please be on stand and contact Dublin Delivery on 121.900 10 mins prior to scheduled departure.</li>
+              <li>Please familiarize yourself with all the relevant charts</li>
+              <li>And above all else have a great time!</li>
+            </ul>
+            </div>
+
+            <h2>Feedback</h2>
+            <p>Please leave some on the form below!</p>
+            <%= label_tag 'Comment:' %>
+            <%=  text_area_tag 'post',nil, :cols => 26, :rows => 5%>
+            
+            
+          </div>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+      <%= render '/layouts/footer' %>
+
+    </div>
+  </body>
+</html>

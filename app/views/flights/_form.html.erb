@@ -1,0 +1,48 @@
+<% form_for @flight do |f| %>
+  <%= f.error_messages %>
+  <div id="scaffold_form">
+  <table>
+    <tr>
+      <th><%= f.label :airline %></th>
+      <td><%= f.text_field :airline %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :callsign %></th>
+      <td><%= f.text_field :callsign %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :dep %></th>
+      <td><%= f.text_field :dep %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :arr %></th>
+      <td><%= f.text_field :arr %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :departs %></th>
+      <td><%= f.datetime_select :dtime %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :arrives %></th>
+      <td><%= f.datetime_select :atime %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :aircraft %></th>
+      <td><%= f.text_field :aircraft %></td>
+    </tr>
+    <tr>
+      <th>&nbsp;</th><th><%= f.label :inbound %><%= f.check_box :inbound %><%= f.label :outbound %><%= f.check_box :outbound %></th>
+      
+    </tr>
+    <tr>
+      <th><%= f.label :flight_level %></th>
+      <td><%= f.text_field :flight_level %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :routing %></th>
+      <td><%= f.text_area :routing %></td>
+    </tr>
+  </table>
+</div>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

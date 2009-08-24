@@ -1,0 +1,61 @@
+<% title "Flight" %>
+
+<p>
+  <strong>Airline:</strong>
+  <%=h @flight.airline %>
+</p>
+<p>
+  <strong>Callsign:</strong>
+  <%=h @flight.callsign %>
+</p>
+<p>
+  <strong>Dep:</strong>
+  <%=h @flight.dep %>
+</p>
+<p>
+  <strong>Arr:</strong>
+  <%=h @flight.arr %>
+</p>
+<p>
+  <strong>Dtime:</strong>
+  <%=h @flight.dtime %>
+</p>
+<p>
+  <strong>Atime:</strong>
+  <%=h @flight.atime %>
+</p>
+<p>
+  <strong>Aircraft:</strong>
+  <%=h @flight.aircraft %>
+</p>
+<p>
+  <strong>Inbound:</strong>
+  <%=h @flight.inbound %>
+</p>
+<p>
+  <strong>Outbound:</strong>
+  <%=h @flight.outbound %>
+</p>
+<p>
+  <strong>Booked:</strong>
+  <%=h @flight.booked %>
+  <% unless @booking.nil? %>
+    Booked By <%=h @booking.name %>
+  <% else %>
+  Not Booked!
+  <% end %>
+</p>
+<p>
+  <strong>Routing:</strong>
+  <%=h @flight.routing %>
+</p>
+<p>
+  <strong>Flight Level:</strong>
+  <%=h @flight.flight_level %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_flight_path(@flight) %> |
+  <%= link_to "Destroy", @flight, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", flights_path %>
+</p>

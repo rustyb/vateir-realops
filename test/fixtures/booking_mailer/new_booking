@@ -1,0 +1,3 @@
+BookingMailer#new_booking
+
+Find me in app/views/booking_mailer/new_booking.erb

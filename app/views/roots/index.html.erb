@@ -1,0 +1,27 @@
+<% for page in @pages %>
+<%= page.content %>
+<% end %>
+
+
+<% content_for :side do %>
+  <h2>Booking Stats</h2>
+            <ul>
+              <li>Number of Flights Booked (XX)</li>
+              <li>Number of Flights Left (XX)</li>
+            </ul>
+
+            <h2>Remember</h2>
+            <div class="error">
+
+            <ul>
+              <li>If departing please be on stand and contact Dublin Delivery on 121.900 10 mins prior to scheduled departure.</li>
+              <li>Please familiarize yourself with all the relevant charts</li>
+              <li>And above all else have a great time!</li>
+            </ul>
+            </div>
+
+            <h2>Feedback</h2>
+            <p>Please leave some on the form below!</p>
+            <%= label_tag 'Comment:' %>
+            <%=  text_area_tag 'post',nil, :cols => 26, :rows => 5%>
+<% end %>

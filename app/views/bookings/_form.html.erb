@@ -1,0 +1,21 @@
+<% form_for @booking do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :vatsim_id %><br />
+    <%= f.text_field :vatsim_id %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%# f.label :flight_id %><br />
+    <%# f.text_field :flight_id %>
+    <%= f.hidden_field :flight_id, :value =>(params[:id])  %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

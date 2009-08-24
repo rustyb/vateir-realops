@@ -1,0 +1,25 @@
+<% title "Bookings" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Vatsim ID</th>
+    <th>Email</th>
+    <th>Callsign</th>
+    <th>Route Pair</th>
+  </tr>
+  <% for booking in @bookings %>
+    <tr>
+      <td><%=h booking.name %></td>
+      <td><%=h booking.vatsim_id %></td>
+      <td><%=h booking.email %></td>
+      <td><%=h booking.flight.callsign %></td>
+      <td><%=h booking.flight.dep %> - <%=h booking.flight.arr %></td>
+      <td><%= link_to "Show", booking %></td>
+      <td><%= link_to "Edit", edit_booking_path(booking) %></td>
+      <td><%= link_to "Destroy", booking, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Booking", new_booking_path %></p>

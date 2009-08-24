@@ -1,0 +1,24 @@
+<% title "Booking" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @booking.name %>
+</p>
+<p>
+  <strong>Vatsim ID:</strong>
+  <%=h @booking.vatsim_id %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%=h @booking.email %>
+</p>
+<p>
+  <strong>Flight Booked:</strong>
+  <b><%=h @booking.flight.callsign %></b> <%=h @booking.flight.dep %> - <%=h @booking.flight.arr %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_booking_path(@booking) %> |
+  <%= link_to "Destroy", @booking, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", bookings_path %>
+</p>

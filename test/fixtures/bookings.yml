@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  vatsim_id: 1
+  email: MyString
+  flight_id: 1
+
+two:
+  name: MyString
+  vatsim_id: 1
+  email: MyString
+  flight_id: 1

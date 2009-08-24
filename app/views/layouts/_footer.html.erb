@@ -1,0 +1,11 @@
+<div id="footer" class="span-24">
+        <p><%= link_to "VATeir.com", "http://www.vateir.com" %> | <%= link_to "Legal", legal_path, :popup => ['new_window_name','toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=530,height=400,left = 440,top = 200'] %> | <%= link_to "Contact", "" %>
+
+<% unless logged_in? %>
+| <%= link_to "Admin", login_path %>
+<% else %>
+| <%= link_to "Logout", logout_path %>
+<% end %>
+</p>
+<% render  %>
+      </div>
