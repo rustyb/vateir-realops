@@ -12,6 +12,5 @@ nbproject/*
 config/deploy/*
 config/deploy.rb
 public/system/*
-app/views/*
 
 
