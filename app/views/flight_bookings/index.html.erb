@@ -6,7 +6,7 @@
 
 
 
-<h3><%= link_to 'Flights from Dublin', departures_flight_bookings_path %></h3>
+<h3><%= link_to 'Flights from Dublin', departures_flight_bookings_path %> | <%= link_to 'Flights to Dublin', arrivals_flight_bookings_path %></h3>
 <h3><%= 'all flights'.to_s.upcase %></h3>
 <p>This page contains a list of all flights both to/from <b>Dublin</b>. In case you want to book more than one flight, keep in mind that the time between estimated time of arrival (ETA) and the next departure time (ETD) should be at least 30 minutes. The ETD (estimated time of departure) will be your off block time.<br />
 Try to use the correct aircraft-type or at least use an aircraft-type with similar performance data.</p>
@@ -48,6 +48,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
     <th>Callsign</th>
     <th>Origin</th>
     <th>ETD</th>
+    <th>Destination</th>
     <th>Aircraft</th>
     <th>Pilot</th>
     <th>Flight Level</th>
@@ -59,6 +60,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
       <td><%=h flight.callsign %></td>
       <td><%=h flight.dep %></td>
       <td><%=h flight.dtime.strftime("%I:%M") %></td>
+      <td><%=h flight.arr %></td>
       <td><%=h flight.aircraft %></td>
       <td><% if flight.booking.blank? %>N/a<% else %><%=h flight.booking.name %><% end %></td>
       <td><%=h flight.flight_level %></td>
@@ -72,7 +74,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
         <% if flight.booking.blank? %>
         <td class="success"><%= link_to "Book", "/bookings/new?id=#{h(flight.id)}" %></td>
       <% else %>
-        <td class="error">Flight Booked</td>
+        <td class="error">Booked</td>
 
       <% end %>
     </tr>
