@@ -1,0 +1,81 @@
+<p>Dear <%= @booking.name %></p>
+
+<p>Thank you foor booking a flight to or from the Dublin Realops 2009!</p>
+
+<h3>Your flight details are as follows:</h3>
+
+<table>
+  <tr>
+    <td><b>Flight Number:</b></td>
+    <td><%= @booking.flight.callsign %> (use this as your VATSIM callsign)</td>
+  </tr>
+  <tr>
+    <td><b>Departure:</b></td>
+    <td><%= @booking.flight.dep %></td>
+  </tr>
+  <tr>
+    <td><b>Arrival:</b></td>
+    <td><%= @booking.flight.arr %></td>
+  </tr>
+  <tr>
+    <td><b>Departure Time:</b></td>
+    <td><%= @booking.flight.dtime.strftime("%I:%M") %></td>
+  </tr>
+  <tr>
+    <td><b>Arrival Time:</b></td>
+    <td><%= @booking.flight.atime.strftime("%I:%M") %></td>
+  </tr>
+  <tr>
+    <td><b>Aircraft:</b></td>
+    <td><%= @booking.flight.aircraft %></td>
+  </tr>
+  <tr>
+    <td><b>Routing:</b></td>
+    <td><%= @booking.flight.routing.upcase %></td>
+  </tr>
+</table>
+
+<p>For full fuel and flight planning, please utilise the free vRoute application available to download at www.vroute.net.</p>
+
+<p align="center">
+**********************************************************************************************************************************<br />
+                        IMPORTANT PLEASE READ<br />
+**********************************************************************************************************************************</p>
+
+<p>Please note your departure time very carefully. You are asked to be connected at your assigned stand a minimum of 15 minutes before your scheduled departure time. This does not include extra time you may wish to spend starting your aircraft from cold.</p>
+
+<p>ALL PILOTS SHOULD HAVE THEIR ATC CLEARANCE TEN MINUTES PRIOR TO DEPARTURE.</p>
+
+<p>Important frequencies to note for departing aircraft:</p>
+
+<table>
+  <tr>
+    <td>Dublin Clearance Delivery</td>
+    <td>121.8700</td>
+  </tr>
+  <tr>
+    <td>Dublin Tower</td>
+    <td>118.600</td>
+  </tr>
+  <tr>
+    <td>Dublin Ground</td>
+    <td>121.8000</td>
+  </tr>
+  <tr>
+    <td>Dublin Radar</td>
+    <td>129.1700</td>
+  </tr>
+  <tr>
+    <td>Shannon Control</td>
+    <td>124.7000 or 131.1500</td>
+  </tr>
+</table>
+
+<p>Pilots should follow the taxi routes assigned by atc and prepare for them by printing the charts and taxi routes below:</p>
+
+<ul>
+<li>*Dublin Ground Chart*</li>
+<li>*Dublin AD Chart*</li>
+<li>*Dublin Departure Chart*</li>
+<li>*ENR Chart*</li>
+</ul>

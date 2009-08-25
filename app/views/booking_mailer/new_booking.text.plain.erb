@@ -1,0 +1,43 @@
+Dear <%= @booking.name %>
+
+Thank you foor booking a flight to or from the Dublin Realops 2009!
+
+Your flight details are as follows:
+
+Flight Number: <%= @booking.flight.callsign %> (use this as your VATSIM callsign)
+IATA Flight Number: EI101
+Departure: <%= @booking.flight.dep %>
+Arrival: <%= @booking.flight.arr %>
+Departure Time: <%= @booking.flight.dtime.strftime("%I:%M") %>
+Arrival Time: <%= @booking.flight.atime.strftime("%I:%M") %>
+ETE (Estimated Time Enroute): 0105
+Distance: 350nm
+Aircraft: <%= @booking.flight.aircraft %>
+Routing: <%= @booking.flight.routing.upcase %>
+
+For full fuel and flight planning, please utilise the free vRoute application available to download at www.vroute.net.
+
+*********************
+IMPORTANT PLEASE READ
+*********************
+
+Please note your departure time very carefully. You are asked to be connected at your assigned stand a minimum of 15 minutes before your scheduled departure time. This does not include extra time you may wish to spend starting your aircraft from cold.
+
+ALL PILOTS SHOULD HAVE THEIR ATC CLEARANCE TEN MINUTES PRIOR TO DEPARTURE.
+
+Important frequencies to note for departing aircraft:
+
+Dublin Clearance Delivery	121.8700
+Dublin Ground 121.8000
+Dublin Tower	 118.6000
+Dublin Radar	 129.1700
+Shannon Control 124.7000
+also	 131.1500
+
+Pilots should follow the taxi routes assigned by atc and prepare for them by printing the charts and taxi routes below:
+
+
+*Dublin Ground Chart*
+*Dublin AD Chart*
+*Dublin Departure Chart*
+*ENR Chart*
