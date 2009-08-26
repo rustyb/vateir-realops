@@ -1,6 +1,6 @@
 <% title "Bookings" %>
 
-<table>
+<table id="admin_table">
   <tr>
     <th>Name</th>
     <th>Vatsim ID</th>
@@ -15,9 +15,8 @@
       <td><%=h booking.email %></td>
       <td><%=h booking.flight.callsign %></td>
       <td><%=h booking.flight.dep %> - <%=h booking.flight.arr %></td>
-      <td><%= link_to "Show", booking %></td>
-      <td><%= link_to "Edit", edit_booking_path(booking) %></td>
-      <td><%= link_to "Destroy", booking, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to image_tag('/images/icons/page.png', :title => 'View Booking', :alt => 'View'), booking %> 
+          <%= link_to image_tag('/images/icons/delete.png', :title => "Delete Booking", :alt => "Delete"), booking, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

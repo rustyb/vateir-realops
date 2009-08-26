@@ -42,7 +42,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
     <td>= Not Booked</td>
   </tr>
 </table>
-<table>
+<table id="bookings_table">
   <tr>
     <th>Airline</th>
     <th>Callsign</th>
@@ -56,7 +56,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
   </tr>
   <% for flight in @flight_bookings %>
     <tr>
-      <td><%= image_tag "/images/airlines/#{h(flight.airline)}.bmp", :alt => flight.airline, :title => flight.airline %></td>
+      <td><%= image_tag "/images/airlines/new/#{h(flight.airline)}.gif", :alt => flight.airline, :title => flight.airline %></td>
       <td><%=h flight.callsign %></td>
       <td><%=h flight.dep %></td>
       <td><%=h flight.dtime.strftime("%I:%M") %></td>

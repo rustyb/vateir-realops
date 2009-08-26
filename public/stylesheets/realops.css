@@ -141,3 +141,32 @@ div#sidebar a:hover {
     width:99%;
     height:inherit;
 }
+
+/*/////////////////////////////////////////////////////////////////////////////
+
+                            ADMIN_TABLE CSS
+/////////////////////////////////////////////////////////////////////////////*/
+
+
+#admin_table th,#admin_table td,#admin_table caption {
+padding:4px 1px 4px 5px;
+}
+#admin_table th {
+        border:1px solid #000;
+
+       /* border-width: 1px 1px 1px 0px;*/
+}
+
+#admin_table { border-collapse:collapse;}
+
+#bookings_table th,#bookings_table td,#bookings_table caption {
+padding:4px 1px 4px 5px;
+}
+#bookings_table th {
+        border:1px solid #000;
+
+       /* border-width: 1px 1px 1px 0px;*/
+}
+
+#bookings_table { border-collapse:collapse;}
+

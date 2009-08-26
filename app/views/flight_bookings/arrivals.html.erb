@@ -20,7 +20,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
     <td>= Not Booked</td>
   </tr>
 </table>
-<table>
+<table id="bookings_table">
   <tr>
     <th>Airline</th>
     <th>Callsign</th>
@@ -33,7 +33,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
   </tr>
   <% for flight in @flight_bookings %>
     <tr>
-      <td><%= image_tag "/images/airlines/#{h(flight.airline)}.bmp", :alt => flight.airline, :title => flight.airline %></td>
+      <td><%= image_tag "/images/airlines/new/#{h(flight.airline)}.gif", :alt => flight.airline, :title => flight.airline %></td>
       <td><%=h flight.callsign %></td>
       <td><%=h flight.dep %></td>
       <td><%=h flight.dtime.strftime("%I:%M") %></td>
@@ -41,7 +41,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
       <td><% if flight.booking.blank? %>N/a<% else %><%=h flight.booking.name %><% end %></td>
       <td><%=h flight.flight_level %></td>
 
-      <% unless !logged_in? %>
+      <% if logged_in? %>
         <td>
           <%= link_to "Show", flight %> |
           <%= link_to "Edit", edit_flight_path(flight) %> |
@@ -50,7 +50,7 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
         <% if flight.booking.blank? %>
         <td class="success"><%= link_to "Book", "/bookings/new?id=#{h(flight.id)}" %></td>
       <% else %>
-        <td class="error">Flight Booked<%= link_to "Booking", booking_path(flight.booking.id) %></td>
+        <td class="error">Booked</td>
 
       <% end %>
     </tr>
