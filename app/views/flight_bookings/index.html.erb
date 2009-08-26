@@ -19,11 +19,11 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
     </tr>
     <tr>
       <td><%= f.label :dep_like, "Origin" %> </td>
-      <td><%= f.text_field :dep_like %></td>
+      <td><%= f.text_field :dep_like, :maxlength => 4, :size => 30 %></td>
     </tr>
     <tr>
       <td><%= f.label :arr_like, "Destination" %></td>
-      <td><%= f.text_field :arr_like %></td>
+      <td><%= f.text_field :arr_like, :maxlength => 4, :size => 30 %></td>
     </tr>
   </table>
   <p>
