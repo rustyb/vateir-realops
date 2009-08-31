@@ -6,6 +6,8 @@ class Flight < ActiveRecord::Base
   validates_presence_of :airline, :callsign, :dep, :arr, :dtime, :atime, :aircraft, :routing, :flight_level
   validates_uniqueness_of :callsign
 
+  validates_presence_of :inbound, :unless => :outbound
+
   validates_length_of :dep, :arr, :is => 4
   validates_length_of :callsign, :minimum => 3
   validates_length_of :airline, :is => 3

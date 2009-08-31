@@ -14,5 +14,13 @@ class Booking < ActiveRecord::Base
     write_attribute :email, (value ? value.downcase : nil)
   end
 
+
+  def recently_created?
+    @created
+  end
+
+  def flight_from_eidw
+    flight.arr == "EIDW"
+  end
   
 end

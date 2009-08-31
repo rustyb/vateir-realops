@@ -1,0 +1,52 @@
+Dear <%= @booking.name %>
+
+Thank you for booking a flight to the VATeir Dublin Realops 2009!
+
+This flight arrives in Dublin
+
+Your flight details are as follows:
+
+Flight Number: <%= @booking.flight.callsign %> (use this as your VATSIM callsign)
+IATA Flight Number: EI101
+Departure: <%= @booking.flight.dep %>
+Destination: <%= @booking.flight.arr %>
+Departure Time: <%= @booking.flight.dtime.strftime("%I:%M") %>
+Arrival Time: <%= @booking.flight.atime.strftime("%I:%M") %>
+Aircraft: <%= @booking.flight.aircraft %>
+Routing: <%= @booking.flight.routing.upcase %>
+
+Please note you must fly routing given above in this booking.
+
+For full fuel and flight planning, please utilise the free vRoute application available to download at www.vroute.net.
+
+**********************************************************************************************************************************
+IMPORTANT PLEASE READ
+**********************************************************************************************************************************
+
+Please note your Departure Time and your assigned Flight Level Range very carefully. You are asked to be connected a minimum of 15 minutes before your scheduled departure time. This will allow you the best possible chance of arriving in Dublin at the approximate Arrival Time.
+
+The majority of Flights entering Irish Airspace will be handled directly by Shannon Control EISN_*_CTR, however a number of flights will be handled directly by Dublin Radar upon entering the airspace. This will depend on your entry point and the Flight Level in which you enter the airspace.
+
+Important frequencies to note for arriving aircraft are as follows:
+
+Shannon Control		124.700(Low) or 131.150(Shannon)
+Dublin Radar(North)	129.170
+Dublin Radar(South)	129.170
+Dublin Approach		121.100
+Dublin Tower		118.600
+Dublin Ground		121.800
+
+Pilots should be familiar with the arrival procedures set out in the charts below, it is best to prepare by printing these charts:
+
+Please note that in most cases the majority of aircraft will be vectored on to the localizer with out holding, however even with the best controllers some holding may be neccessary, so please be familiar with the published holding procedures for Dublin Airport.
+
+*Dublin Ground Chart*
+*Dublin AD Chart*
+*Dublin Departure Chart*
+*ENR Chart*
+
+
+
+Kind Regards,
+The VATeir Dublin RealOps Team
+staff@vateir.com
