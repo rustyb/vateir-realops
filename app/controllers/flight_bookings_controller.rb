@@ -10,13 +10,15 @@ class FlightBookingsController < ApplicationController
   end
 
   def departures
-    @flight_bookings = Flight.find(:all, :conditions => ["dep = 'EIDW'", true])
+    @search = Flight.search(params[:search])
+    @flight_bookings = Flight.find(:all, :conditions => ["dep = 'EIDW'", true], :order => 'dtime ASC')
   end
 
   def arrivals
-    @flight_bookings = Flight.find(:all, :conditions => ["arr = 'EIDW'", true])
+    @search = Flight.search(params[:search])
+    @flight_bookings = Flight.find(:all, :conditions => ["arr = 'EIDW'", true], :order => 'atime ASC')
   end
-  
-  
+ 
+
   
 end

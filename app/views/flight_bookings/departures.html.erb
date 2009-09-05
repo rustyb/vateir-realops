@@ -26,24 +26,27 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
 
 <table id="bookings_table">
   <tr>
-    <th>Airline</th>
-    <th>Callsign</th>
-    <th>Destination</th>
-    <th>ETD</th>
-    <th>Aircraft</th>
+    
+    <th width="85px">Airline</th>
+    <th width="70px">Callsign</th>
+    <th width="35px" style="text-align:center;">ETD</th>
+    <th width="68px" style="text-align:center;">Destination</th>
+    <th width="35px"  style="text-align:center;">ETA</th>
+    <th width="50">Aircraft</th>
     <th>Pilot</th>
-    <th>Flight Level</th>
-    <th>Status</th>
+    <th width="60px">Status</th>
+
   </tr>
   <% for flight in @flight_bookings %>
     <tr>
       <td><%= image_tag "/images/airlines/new/#{h(flight.airline)}.gif", :alt => flight.airline, :title => flight.airline %></td>
       <td><%=h flight.callsign %></td>
       <td><%=h flight.arr %></td>
-      <td><%=h flight.dtime.strftime("%I:%M") %></td>
-      <td><%=h flight.aircraft %></td>
+      <td style="text-align:center;"><%=h flight.dtime.strftime("%H:%M") %></td>
+      <td style="text-align:center;"><%=h flight.atime.strftime("%H:%M") %></td>
+      <td><%=h flight.aircraft.upcase %></td>
       <td><% if flight.booking.blank? %>N/a<% else %><%=h flight.booking.name %><% end %></td>
-      <td><%=h flight.flight_level %></td>
+
 
       <% if logged_in? %>
         <td>
@@ -51,6 +54,9 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
           <%= link_to "Edit", edit_flight_path(flight) %> |
           <%= link_to "Destroy", flight, :confirm => 'Are you sure?', :method => :delete %></td>
         <% end %>
+
+
+
         <% if flight.booking.blank? %>
         <td class="success"><%= link_to "Book", "/bookings/new?id=#{h(flight.id)}" %></td>
       <% else %>

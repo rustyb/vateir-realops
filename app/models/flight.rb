@@ -17,5 +17,6 @@ class Flight < ActiveRecord::Base
   def route=(value)
     write_attribute :route, (value ? value.upcase : nil)
   end
+
   
 end
