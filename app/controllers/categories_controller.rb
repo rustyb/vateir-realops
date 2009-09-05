@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_filter :login_required, :except => [:show]
+  
   def index
     @categories = Category.all
   end

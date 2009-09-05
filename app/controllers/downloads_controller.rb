@@ -1,4 +1,6 @@
 class DownloadsController < ApplicationController
+  before_filter :login_required, :except => [:show, :list]
+  
   def index
     @downloads = Download.find(:all, :include => :category)
   end
