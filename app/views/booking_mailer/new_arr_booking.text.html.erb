@@ -1,12 +1,12 @@
 <p>Dear <%= @booking.name %></p>
 
 <p>Thank you foor booking a flight to the Dublin Realops 2009!</p>
-<h2>This flight arrives in Dublin</h2>
+<h2>This flight Arrives at Dublin</h2>
 <h3>Your flight details are as follows:</h3>
 
 <table>
   <tr>
-    <td><b>Flight Number:</b></td>
+    <td><b>Flight Number/Callsign:</b></td>
     <td><%= @booking.flight.callsign %> (use this as your VATSIM callsign)</td>
   </tr>
   <tr>
@@ -19,11 +19,11 @@
   </tr>
   <tr>
     <td><b>Departure Time:</b></td>
-    <td><%= @booking.flight.dtime.strftime("%I:%M") %></td>
+    <td><%= @booking.flight.dtime.strftime("%H:%M") %></td>
   </tr>
   <tr>
     <td><b>Arrival Time:</b></td>
-    <td><%= @booking.flight.atime.strftime("%I:%M") %></td>
+    <td><%= @booking.flight.atime.strftime("%H:%M") %></td>
   </tr>
   <tr>
     <td><b>Aircraft:</b></td>
@@ -35,8 +35,6 @@
   </tr>
 </table>
 
-<p>Please note you must fly routing given above in this booking.</p>
-
 <p>For full fuel and flight planning, please utilise the free vRoute application available to download at www.vroute.net.</p>
 
 <p align="center">
@@ -44,31 +42,52 @@
                         IMPORTANT PLEASE READ<br />
 **********************************************************************************************************************************</p>
 
-<p>Please note your Departure Time and your assigned Flight Level Range very carefully. You are asked to be connected a minimum of 15 minutes before your scheduled departure time. This will allow you the best possible chance of arriving in Dublin at the approximate Arrival Time.</p>
+<p>Please note your departure time very carefully. You are asked to be connected at your assigned stand a minimum of 15 minutes before your scheduled departure time. This does not include extra time you may wish to spend starting your aircraft from cold.</p>
 
-<p>The majority of Flights entering Irish Airspace will be handled directly by Shannon Control EISN_*_CTR, however a number of flights will be handled directly by Dublin Radar upon entering the airspace. This will depend on your entry point and the Flight Level in which you enter the airspace.</p>
+<p>Important frequencies to note for arriving aircraft:</p>
 
-<p>Important frequencies to note for arriving aircraft are as follows:</p>
 <table>
-<tr><td>Shannon Control</td><td>      124.700(Low) or 131.150(Shannon)</td></tr>
-<tr><td>Dublin Radar(North)</td><td>  129.170</td></tr>
-<tr><td>Dublin Radar(South)</td><td>  129.170</td></tr>
-<tr><td>Dublin Approach</td><td>      121.100</td></tr>
-<tr><td>Dublin Tower</td><td>         118.600</td></tr>
-<tr><td>Dublin Ground</td><td>        121.800</td></tr>
+  <tr>
+    <td>Dublin Clearance Delivery</td>
+    <td>121.870</td>
+  </tr>
+  <tr>
+    <td>Dublin Ground</td>
+    <td>121.800</td>
+  </tr>
+  <tr>
+    <td>Dublin Tower</td>
+    <td>118.600</td>
+  </tr>
+  <tr>
+    <td>Dublin Radar</td>
+    <td>129.170</td>
+  </tr>
+  <tr>
+    <td>Shannon Control</td>
+    <td>124.700 or 131.150</td>
+  </tr>
 </table>
 
-<p>Pilots should be familiar with the arrival procedures set out in the charts below, it is best to prepare by printing these charts:</p>
+<p>Pilots should follow the taxi routes assigned by atc and prepare for them by printing the charts and taxi routes below:</p>
 
-<p>Please note that in most cases the majority of aircraft will be vectored on to the localizer with out holding, however even with the best controllers some holding may be neccessary, so please be familiar with the published holding procedures for Dublin Airport.</p>
+<h3>These are the most important charts for your flight:</h3>
 <ul>
-<li>*Dublin Ground Chart*</li>
-<li>*Dublin AD Chart*</li>
-<li>*Dublin Departure Chart*</li>
-<li>*ENR Chart*</li>
+<li><%= link_to "Aircraft Parking/Docking Chart","http://realops.vateir.com/system/downloads/1/original/EI_AD_2_EIDW_24-2_en.pdf" %></li>
+<li><%= link_to "Aerodrome Chart - ICAO","http://realops.vateir.com/system/downloads/19/original/EI_AD_2_EIDW_24-1_en.pdf" %></li>
+<li><%= link_to "STAR Chart - RWY 10 - ICAO","http://realops.vateir.com/system/downloads/3/original/EI_AD_2_EIDW_24-19_en.pdf" %></li>
+<li><%= link_to "STAR Chart - RWY 10 - ICAO","http://realops.vateir.com/system/downloads/5/original/EI_AD_2_EIDW_24-17_en.pdf" %></li>
+<li><%= link_to "STAR Chart - RWY 16 - ICAO", "http://realops.vateir.com/system/downloads/7/original/EI_AD_2_EIDW_24-18_en.pdf" %></li>
+<li><%= link_to "Instrument Approach Chart - ILS CAT 1 & 11 or LLZ RWY 28 - ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-20_en.pdf" %></li>
+<li><%= link_to "Instrument Approach Chart - ILS CAT 1 & 11 or LLZ RWY 10 - ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-22_en.pdf" %></li>
+<li><%= link_to "Instrument Approach Chart ILS or LLZ RWY 16 - ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-24_en.pdf" %></li>
+<li><%= link_to "Visual Approach Chart– ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-28_en.pdf" %></li>
 </ul>
+<p>The rest of the Charts along with Necessery Scenery Downloads are available on the website <%= link_to "Charts & Scenery", url_for(:host => "realops.vateir.com", :controller => "downloads", :action => "list") %> </p>
 
+<p>We hope you have a pleasant flight and we look forward to hearing you during the Dublin Realops 2009.</p>
 
-<p>Kind Regards,<br /><br />
-<b>The VATeir Dublin RealOps Team</b><br />
-staff@vateir.com</p>
+<p>All the best,<br />
+<b>The VATeir Realops Team</b><br />
+<br />
+realops@vateir.com</p>

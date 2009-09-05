@@ -6,14 +6,11 @@ THIS FLIGHT DEPARTS DUBLIN
 
 Your flight details are as follows:
 
-Flight Number: <%= @booking.flight.callsign %> (use this as your VATSIM callsign)
-IATA Flight Number: EI101
+Flight Number/Callsign: <%= @booking.flight.callsign %> (use this as your VATSIM callsign)
 Departure: <%= @booking.flight.dep %>
 Arrival: <%= @booking.flight.arr %>
-Departure Time: <%= @booking.flight.dtime.strftime("%I:%M") %>
-Arrival Time: <%= @booking.flight.atime.strftime("%I:%M") %>
-ETE (Estimated Time Enroute): 0105
-Distance: 350nm
+Departure Time: <%= @booking.flight.dtime.strftime("%H:%M") %>
+Arrival Time: <%= @booking.flight.atime.strftime("%H:%M") %>
 Aircraft: <%= @booking.flight.aircraft %>
 Routing: <%= @booking.flight.routing.upcase %>
 
@@ -38,8 +35,20 @@ also	 131.1500
 
 Pilots should follow the taxi routes assigned by atc and prepare for them by printing the charts and taxi routes below:
 
+These are the most important charts for your flight:
 
-*Dublin Ground Chart*
-*Dublin AD Chart*
-*Dublin Departure Chart*
-*ENR Chart*
+<%= link_to "Aircraft Parking/Docking Chart","http://realops.vateir.com/system/downloads/1/original/EI_AD_2_EIDW_24-2_en.pdf" %>
+<%= link_to "Aerodrome Chart - ICAO","http://realops.vateir.com/system/downloads/19/original/EI_AD_2_EIDW_24-1_en.pdf" %>
+<%= link_to "SID Chart – RWY 28 CAT C, D – ICAO","http://realops.vateir.com/system/downloads/3/original/EI_AD_2_EIDW_24-10_en.pdf" %>
+<%= link_to "SID – RWY 10 CAT C, D – ICAO","http://realops.vateir.com/system/downloads/5/original/EI_AD_2_EIDW_24-12_en.pdf" %>
+<%= link_to "SID – RWY 16 CAT C, D – ICAO", "http://realops.vateir.com/system/downloads/7/original/EI_AD_2_EIDW_24-14_en.pdf" %>
+<%= link_to "SID – RWY 34 CAT C, D – ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-16_en.pdf" %>
+
+The rest of the Charts along with Necessery Scenery Downloads are available on the website <%= link_to "Charts & Scenery", url_for(:host => "realops.vateir.com", :controller => "downloads", :action => "list") %>
+
+We hope you have a pleasant flight and we look forward to hearing you during the Dublin Realops 2009.
+
+All the best,
+The VATeir Realops Team
+
+realops@vateir.com

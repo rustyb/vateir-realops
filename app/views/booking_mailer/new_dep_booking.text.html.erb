@@ -6,7 +6,7 @@
 
 <table>
   <tr>
-    <td><b>Flight Number:</b></td>
+    <td><b>Flight Number/Callsign:</b></td>
     <td><%= @booking.flight.callsign %> (use this as your VATSIM callsign)</td>
   </tr>
   <tr>
@@ -73,9 +73,20 @@
 
 <p>Pilots should follow the taxi routes assigned by atc and prepare for them by printing the charts and taxi routes below:</p>
 
+<h3>These are the most important charts for your flight:</h3>
 <ul>
-<li>*Dublin Ground Chart*</li>
-<li>*Dublin AD Chart*</li>
-<li>*Dublin Departure Chart*</li>
-<li>*ENR Chart*</li>
+<li><%= link_to "Aircraft Parking/Docking Chart","http://realops.vateir.com/system/downloads/1/original/EI_AD_2_EIDW_24-2_en.pdf" %></li>
+<li><%= link_to "Aerodrome Chart - ICAO","http://realops.vateir.com/system/downloads/19/original/EI_AD_2_EIDW_24-1_en.pdf" %></li>
+<li><%= link_to "SID Chart – RWY 28 CAT C, D – ICAO","http://realops.vateir.com/system/downloads/3/original/EI_AD_2_EIDW_24-10_en.pdf" %></li>
+<li><%= link_to "SID – RWY 10 CAT C, D – ICAO","http://realops.vateir.com/system/downloads/5/original/EI_AD_2_EIDW_24-12_en.pdf" %></li>
+<li><%= link_to "SID – RWY 16 CAT C, D – ICAO", "http://realops.vateir.com/system/downloads/7/original/EI_AD_2_EIDW_24-14_en.pdf" %></li>
+<li><%= link_to "SID – RWY 34 CAT C, D – ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-16_en.pdf" %></li>
 </ul>
+<p>The rest of the Charts along with Necessery Scenery Downloads are available on the website <%= link_to "Charts & Scenery", url_for(:host => "realops.vateir.com", :controller => "downloads", :action => "list") %> </p>
+
+<p>We hope you have a pleasant flight and we look forward to hearing you during the Dublin Realops 2009.</p>
+
+<p>All the best,<br />
+<b>The VATeir Realops Team</b><br />
+<br />
+realops@vateir.com</p>

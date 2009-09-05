@@ -1,52 +1,53 @@
 Dear <%= @booking.name %>
 
-Thank you for booking a flight to the VATeir Dublin Realops 2009!
+Thank you foor booking a flight to the Dublin Realops 2009!
 
-This flight arrives in Dublin
+THIS FLIGHT ARRIVES AT DUBLIN
 
 Your flight details are as follows:
 
-Flight Number: <%= @booking.flight.callsign %> (use this as your VATSIM callsign)
-IATA Flight Number: EI101
+Flight Number/Callsign: <%= @booking.flight.callsign %> (use this as your VATSIM callsign)
 Departure: <%= @booking.flight.dep %>
-Destination: <%= @booking.flight.arr %>
+Arrival: <%= @booking.flight.arr %>
 Departure Time: <%= @booking.flight.dtime.strftime("%I:%M") %>
 Arrival Time: <%= @booking.flight.atime.strftime("%I:%M") %>
 Aircraft: <%= @booking.flight.aircraft %>
 Routing: <%= @booking.flight.routing.upcase %>
 
-Please note you must fly routing given above in this booking.
-
 For full fuel and flight planning, please utilise the free vRoute application available to download at www.vroute.net.
 
-**********************************************************************************************************************************
+*********************
 IMPORTANT PLEASE READ
-**********************************************************************************************************************************
+*********************
 
-Please note your Departure Time and your assigned Flight Level Range very carefully. You are asked to be connected a minimum of 15 minutes before your scheduled departure time. This will allow you the best possible chance of arriving in Dublin at the approximate Arrival Time.
+Please note your departure time very carefully. You are asked to be connected at your assigned stand a minimum of 15 minutes before your scheduled departure time. This does not include extra time you may wish to spend starting your aircraft from cold.
 
-The majority of Flights entering Irish Airspace will be handled directly by Shannon Control EISN_*_CTR, however a number of flights will be handled directly by Dublin Radar upon entering the airspace. This will depend on your entry point and the Flight Level in which you enter the airspace.
+Important frequencies to note for arriving aircraft:
 
-Important frequencies to note for arriving aircraft are as follows:
+Dublin Clearance Delivery	121.870
+Dublin Ground 121.800
+Dublin Tower	 118.600
+Dublin Radar	 129.170
+Shannon Control 124.700    also	 131.1500
 
-Shannon Control		124.700(Low) or 131.150(Shannon)
-Dublin Radar(North)	129.170
-Dublin Radar(South)	129.170
-Dublin Approach		121.100
-Dublin Tower		118.600
-Dublin Ground		121.800
+Pilots should follow the taxi routes assigned by atc and prepare for them by printing the charts and taxi routes below:
 
-Pilots should be familiar with the arrival procedures set out in the charts below, it is best to prepare by printing these charts:
+These are the most important charts for your flight:
 
-Please note that in most cases the majority of aircraft will be vectored on to the localizer with out holding, however even with the best controllers some holding may be neccessary, so please be familiar with the published holding procedures for Dublin Airport.
+<%= link_to "Aircraft Parking/Docking Chart","http://realops.vateir.com/system/downloads/1/original/EI_AD_2_EIDW_24-2_en.pdf" %>
+<%= link_to "Aerodrome Chart - ICAO","http://realops.vateir.com/system/downloads/19/original/EI_AD_2_EIDW_24-1_en.pdf" %>
+<%= link_to "STAR Chart - RWY 10 - ICAO","http://realops.vateir.com/system/downloads/3/original/EI_AD_2_EIDW_24-19_en.pdf" %>
+<%= link_to "STAR Chart - RWY 10 - ICAO","http://realops.vateir.com/system/downloads/5/original/EI_AD_2_EIDW_24-17_en.pdf" %>
+<%= link_to "STAR Chart - RWY 16 - ICAO", "http://realops.vateir.com/system/downloads/7/original/EI_AD_2_EIDW_24-18_en.pdf" %>
+<%= link_to "Instrument Approach Chart - ILS CAT 1 & 11 or LLZ RWY 28 - ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-20_en.pdf" %>
+<%= link_to "Instrument Approach Chart - ILS CAT 1 & 11 or LLZ RWY 10 - ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-22_en.pdf" %>
+<%= link_to "Instrument Approach Chart ILS or LLZ RWY 16 - ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-24_en.pdf" %>
+<%= link_to "Visual Approach Chart– ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-28_en.pdf" %>
+The rest of the Charts along with Necessery Scenery Downloads are available on the website <%= link_to "Charts & Scenery", url_for(:host => "realops.vateir.com", :controller => "downloads", :action => "list") %>
 
-*Dublin Ground Chart*
-*Dublin AD Chart*
-*Dublin Departure Chart*
-*ENR Chart*
+We hope you have a pleasant flight and we look forward to hearing you during the Dublin Realops 2009.
 
+All the best,
+The VATeir Realops Team
 
-
-Kind Regards,
-The VATeir Dublin RealOps Team
-staff@vateir.com
+realops@vateir.com
