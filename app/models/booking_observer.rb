@@ -1,5 +1,5 @@
 class BookingObserver < ActiveRecord::Observer
-  def after_save(booking)
+  def after_create(booking)
     if booking.flight.inbound?
       BookingMailer.deliver_new_arr_booking(booking)
     else

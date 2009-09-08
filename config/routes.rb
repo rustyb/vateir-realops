@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.namespace :admin do |admin|
+		admin.resources :mailings
+    admin.resources :controls
+
+  end
+  
   map.charts_scenery 'charts_scenery', :controller => :downloads, :action => :list
   map.resources :categories
 
@@ -11,22 +17,13 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
  # map.resources :users
-
   map.resource :session
-
   map.resources :bookings
-
-
-
   map.resources :flights
-
-  map.home 'home', :controller => :roots
-  
+  map.home 'home', :controller => :roots 
   map.resources :pages, :collection => {:legal => :get}
-
   map.resources :roots
-
-
+  
   map.view_page ':name', :controller => 'viewer', :action => 'show'
   # The priority is based upon order of creation: first created -> highest priority.
 

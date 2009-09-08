@@ -17,5 +17,30 @@ class Booking < ActiveRecord::Base
   def flight_from_eidw
     flight.arr == "EIDW"
   end
+
+
+  def self.bookings_for_mailing(limit)
+		return nil if ((limit > 20) || (limit < 1))
+		find :all,
+      :conditions => ['sent_at IS NULL'],
+      :order => 'created_at ASC',
+      :limit => limit
+	end
+
+
+  def self.resend_to_bookers(limit)
+		if bookings = Booking.bookings_for_mailing(limit)
+			bookings.each do |booking|
+        booking.update_attribute(:sent_at, Time.now)
+        if booking.flight.inbound?
+          BookingMailer.deliver_new_arr_booking(booking)if booking.flight.inbound?
+        else
+          BookingMailer.deliver_new_dep_booking(booking)
+        end
+	  		#BookingMailer.deliver_new_arr_booking(booking)
+			end
+			return true
+		end
+	end
   
 end

@@ -2,7 +2,7 @@
 
 <% for page in @pages %>
   <% title page.name  %>
-<%= page.content %>
+  <%= page.content %>
 <% end %>
 
 
@@ -21,19 +21,13 @@
     </tr>
 
   </table>
-            <ul>
-              <li>Flights Booked (<%= @booked %>)</li>
-              <li>Flights Left (<%= @free_flights %>)</li>
-              <li>Total No. of Flights(<%= @not_booked %>)</li>
-            </ul>
+  <h2>Remember!</h2>
+  <div class="error">
 
-            <h2>Remember!</h2>
-            <div class="error">
-
-            <ul>
-              <li>If departing please be on stand and contact Dublin Delivery on 121.870 10 mins prior to scheduled departure.</li>
-              <li>Please familiarize yourself with all the relevant charts</li>
-              <li>And above all else have a great time!</li>
-            </ul>
-            </div>
+    <ul>
+      <li>If departing please be on stand and contact Dublin Delivery on 121.870 10 mins prior to scheduled departure.</li>
+      <li>Please familiarize yourself with all the relevant charts</li>
+      <li>And above all else have a great time!</li>
+    </ul>
+  </div>
 <% end %>

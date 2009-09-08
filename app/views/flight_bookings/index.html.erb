@@ -45,20 +45,20 @@ Try to use the correct aircraft-type or at least use an aircraft-type with simil
       <td style="text-align:center;"><%=h flight.atime.strftime("%H:%M") %></td>
       <td><%=h flight.arr %></td>
       <td><%=h flight.aircraft.upcase %></td>
-      <td><% if flight.booking.blank? %>N/a<% else %><%=h flight.booking.name %><% end %></td>
-
+     <!-- <td><%# if flight.booking.blank? %>N/a<%# else %><%# flight.booking.name %><%# end %></td> -->
+      <% if flight.booking.blank? %>
+        <td>N/a</td>
+        <td class="success"><%= link_to "Book", "/bookings/new?id=#{h(flight.id)}" %></td>
+      <% else %>
+        <td><%=h flight.booking.name %></td>
+        <td class="error">Booked</td>
+      <% end %>
       <% unless !logged_in? %>
         <td>
           <%= link_to "Show", flight %> |
           <%= link_to "Edit", edit_flight_path(flight) %> |
           <%= link_to "Destroy", flight, :confirm => 'Are you sure?', :method => :delete %></td>
         <% end %>
-        <% if flight.booking.blank? %>
-        <td class="success"><%= link_to "Book", "/bookings/new?id=#{h(flight.id)}" %></td>
-      <% else %>
-        <td class="error">Booked</td>
-
-      <% end %>
     </tr>
   <% end %>
 </table>

@@ -1,0 +1,14 @@
+<% title 'Admin Control Panel' %>
+
+<h2>Resend all booking emails.</h2>
+
+<% form_tag url_for(:controller => 'mailings', :action => 'create') do -%>
+Only to be used a day or two before the event. Recommended maximum of 20 (enforced in the find) sent emails at a time, if you consistantly use that many or need more you should implement the ar_mailer gem or a background process.<br/>
+	<div class="field_row">
+		<label for="limit">Number of emails to send (max 20):</label>
+		<%= text_field_tag 'limit' %><br/>
+	</div>
+	<%= submit_tag 'Send Emails' %>
+<% end -%>
+<br />
+
