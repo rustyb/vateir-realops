@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090824174818) do
+ActiveRecord::Schema.define(:version => 20090908000831) do
 
   create_table "bookings", :force => true do |t|
     t.string   "name"
@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(:version => 20090824174818) do
     t.boolean  "outbound"
     t.boolean  "booked"
     t.text     "routing"
-    t.string   "flight_level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.time     "enroute_time"
   end
 
   create_table "pages", :force => true do |t|
