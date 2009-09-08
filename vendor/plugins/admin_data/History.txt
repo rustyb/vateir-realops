@@ -1,0 +1,33 @@
+
+=== 0.0.5 2009-09-04
+
+* tests for this plugin
+
+* changed the way security configiruation is passed to the plugin
+
+* users can configure number of records in a page. Default is 50 
+
+* fixed bug associated with advance search 
+
+* added link to report bug in footer
+
+* fixed bug in date parsing
+
+=== 0.0.4 2009-08-28
+
+* storing serialized array in string causing problem in truncate method. more at
+  http://github.com/neerajdotname/admin_data/issues#issue/3. 
+
+=== 0.0.3 2009-08-10
+
+* not requiring rubygems
+* if will_paginate is missing then not raising exception
+
+=== 0.0.2 2009-07-06
+
+* ability to sort records
+* better visual clue that search is in progress
+
+=== 0.0.1 2009-05-01
+
+* Initial release
