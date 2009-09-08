@@ -1,1 +1,3 @@
-ADMIN_DATA_VIEW_AUTHORIZATION = Proc.new { |controller| controller.send("logged_in?") }
+AdminDataConfig.set = {
+  :view_security_check => lambda {|controller| controller.send('logged_in?') } 
+}

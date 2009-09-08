@@ -2,9 +2,11 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  unloadable
+  
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-before_filter :free_flights
+  before_filter :free_flights
   include AuthenticatedSystem
   
   # Scrub sensitive parameters from your log
