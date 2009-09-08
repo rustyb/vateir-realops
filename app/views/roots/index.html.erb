@@ -8,12 +8,26 @@
 
 <% content_for :side do %>
   <h2>Booking Stats</h2>
+  <table id="stats">
+    <tr>
+      <td>Flights Booked</td><th><%= @booked %></th>
+    </tr>
+    <tr>
+      <td>Flights Left</td><th><%= @free_flights %></th>
+    </tr>
+
+    <tr class="total">
+      <td>Total No. of Flights</td><th><%= @not_booked %></th>
+    </tr>
+
+  </table>
             <ul>
-              <li>Number of Flights Booked (XX)</li>
-              <li>Number of Flights Left (XX)</li>
+              <li>Flights Booked (<%= @booked %>)</li>
+              <li>Flights Left (<%= @free_flights %>)</li>
+              <li>Total No. of Flights(<%= @not_booked %>)</li>
             </ul>
 
-            <h2>Remember</h2>
+            <h2>Remember!</h2>
             <div class="error">
 
             <ul>
@@ -22,9 +36,4 @@
               <li>And above all else have a great time!</li>
             </ul>
             </div>
-
-            <h2>Feedback</h2>
-            <p>Please leave some on the form below!</p>
-            <%= label_tag 'Comment:' %>
-            <%=  text_area_tag 'post',nil, :cols => 26, :rows => 5%>
 <% end %>

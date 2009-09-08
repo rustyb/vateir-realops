@@ -181,3 +181,5 @@ padding:4px 1px 4px 5px;
 
 #bookings_table { border-collapse:collapse;}
 
+#stats .total td, #stats .total th  {border-top:white 1px solid;}
+
