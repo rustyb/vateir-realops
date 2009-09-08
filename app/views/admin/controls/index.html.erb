@@ -1,5 +1,16 @@
 <% title 'Admin Control Panel' %>
 
+<div class="notice">
+<h2>Controls: (<%= link_to "Logout", logout_path %>)</h2>
+<ul>
+  <li><%= link_to "Manage Pages", pages_path %></li>
+  <li><%= link_to "Manage Bookings", bookings_path %></li>
+  <li><%= link_to "Manage Flights", flights_path %></li>
+  <li><%= link_to "Manage Downloads", downloads_path %></li>
+</ul>
+</div>
+ 
+
 <h2>Resend all booking emails.</h2>
 
 <% form_tag url_for(:controller => 'mailings', :action => 'create') do -%>
