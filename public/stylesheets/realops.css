@@ -183,3 +183,11 @@ padding:4px 1px 4px 5px;
 
 #stats .total td, #stats .total th  {border-top:white 1px solid;}
 
+#special img {
+	display: block;
+	background: #eaeaea;
+	padding: 6px;
+	border: solid 1px #d6d6d6;
+}
+
+
