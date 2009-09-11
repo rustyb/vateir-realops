@@ -5,13 +5,15 @@
     <th>Parent</th>
     <th>Name</th>
     <th>Content</th>
+    <th>Sidebar</th>
+    <th>Controls</th>
   </tr>
   <% for page in @pages %>
     <tr>
       <td><%=h page.parent_id %></td>
       <td><%=h page.name %></td>
-      <td><%=h page.content %></td>
-      <td><%=h page.side_bar %></td>
+      <td><%=h truncate(page.content, 20) %></td>
+      <td><%=h truncate(page.side_bar,20) %></td>
       <td><%= link_to "Show", page %> |<%= link_to "Edit", edit_page_path(page) %> | <%= link_to "Destroy", page, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
