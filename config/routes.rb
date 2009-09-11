@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
+    admin.root :controller => "controls", :action => "index"
 		admin.resources :mailings
     admin.resources :controls
 
