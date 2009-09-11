@@ -12,17 +12,21 @@
 <% title "Flights" %>
 
 <h3 class="prepend-13"><%= link_to "New Flight", new_flight_path %></h3>
+
+<div class="notice"><b>Hover mouse over routing to view the full route for the flight.</b></div>
 <table id="admin_table">
   <tr>
     <th>Airline</th>
     <th>Callsign</th>
-    <th>Destination</th>
-    
+    <th>Origin</th>
     <th>ETD</th>
+    <th>Destination</th>
+    <th>ETA</th>
+    <th>ETE</th>
     <th>Aircraft</th>
     
     <th>Routing</th>
-    <th>Flight Level</th>
+    
     <th>Status</th>
     <th>&nbsp;</th>
   </tr>
@@ -30,23 +34,26 @@
     <tr>
       <td><%= image_tag "/images/airlines/new/#{h(flight.airline)}.gif", :alt => flight.airline, :title => flight.airline %></td>
       <td><%=h flight.callsign %></td>
+      <td><%=h flight.dep %></td>
+      <td><%=h flight.dtime.strftime("%H:%M") %></td>
       <td><%=h flight.arr %></td>
-      <td><%=h flight.dtime.strftime("%I:%M") %></td>
-      <td><%=h flight.aircraft %></td>
-      <td><%=h truncate(flight.routing.upcase) %></td>
-      <td><%=h flight.flight_level %></td>
+      <td><%=h flight.atime.strftime("%H:%M") %></td>
+      <td><%=h flight.enroute_time.strftime("%H:%M") %></td>
+      <td><%=h flight.aircraft.upcase %></td>
+      <td title="<%=h flight.routing.upcase %>"><%=h truncate(flight.routing.upcase, 10) %></td>
       
-      <td><%= link_to image_tag('/images/icons/page.png', :title => 'View Flight', :alt => 'View'), flight %> 
-      <%= link_to image_tag('/images/icons/page_edit.png', :title => 'Edit Flight', :alt => 'Edit'), edit_flight_path(flight) %> 
-      <%= link_to image_tag('/images/icons/delete.png', :title => 'Delete Flight', :alt => 'Delete'), flight, :confirm => 'Are you sure?', :method => :delete %></td>
       <% if flight.booking.blank? %>
          <td class="success"><%= link_to "Book", "/bookings/new?id=#{h(flight.id)}" %></td>
          <% else %>
            <td class="error">
-            <%= link_to "Booking", booking_path(flight.booking.id), :title => "View Booking" %>
+            <%= link_to "Booked", booking_path(flight.booking.id), :title => "View Booking" %>
            </td>
            
         <% end %>
+        <td><%= link_to image_tag('/images/icons/page.png', :title => 'View Flight', :alt => 'View'), flight %>
+      <%= link_to image_tag('/images/icons/page_edit.png', :title => 'Edit Flight', :alt => 'Edit'), edit_flight_path(flight) %>
+      <%= link_to image_tag('/images/icons/delete.png', :title => 'Delete Flight', :alt => 'Delete'), flight, :confirm => 'Are you sure? This will delete any booking associated with the flight.', :method => :delete %></td>
+      
     </tr>
   <% end %>
 </table>

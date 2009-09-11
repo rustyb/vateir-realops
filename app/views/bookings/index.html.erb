@@ -6,7 +6,7 @@
     <th>Vatsim ID</th>
     <th>Email</th>
     <th>Callsign</th>
-    <th>Route Pair</th>
+    
     <th>Email Resent:</th>
   </tr>
   <% for booking in @bookings %>
@@ -15,12 +15,10 @@
       <td><%=h booking.vatsim_id %></td>
       <td><%=h booking.email %></td>
       <td><%=h booking.flight.callsign %></td>
-      <td><%=h booking.flight.dep %> - <%=h booking.flight.arr %></td>
+      
       <td><%=h booking.sent_at %></td>
       <td><%= link_to image_tag('/images/icons/page.png', :title => 'View Booking', :alt => 'View'), booking %> 
           <%= link_to image_tag('/images/icons/delete.png', :title => "Delete Booking", :alt => "Delete"), booking, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
-
-<p><%= link_to "New Booking", new_booking_path %></p>

@@ -1,7 +1,7 @@
 <p>Dear <%= @booking.name %></p>
 
-<p>Thank you foor booking a flight to the Dublin Realops 2009!</p>
-<h2>This flight Arrives at Dublin</h2>
+<p>Thank you for booking a flight from the Dublin Realops 2009!</p>
+<h2>THIS FLIGHT ARRIVES AT DUBLIN</h2>
 <h3>Your flight details are as follows:</h3>
 
 <table>
@@ -26,6 +26,10 @@
     <td><%= @booking.flight.atime.strftime("%H:%M") %></td>
   </tr>
   <tr>
+    <td><b>Enroute Time:</b></td>
+    <td><%= @booking.flight.enroute_time.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
     <td><b>Aircraft:</b></td>
     <td><%= @booking.flight.aircraft %></td>
   </tr>
@@ -35,46 +39,52 @@
   </tr>
 </table>
 
-<p>For full fuel and flight planning, please utilise the free vRoute application available to download at www.vroute.net.</p>
+<p>For full fuel and flight planning, please utilise a route planning application like vroute, available at www.vroute.net. Some of its features are free of charge.
+</p>
 
 <p align="center">
 **********************************************************************************************************************************<br />
                         IMPORTANT PLEASE READ<br />
 **********************************************************************************************************************************</p>
 
-<p>Please note your departure time very carefully. You are asked to be connected at your assigned stand a minimum of 15 minutes before your scheduled departure time. This does not include extra time you may wish to spend starting your aircraft from cold.</p>
+<p>Please note your departure time very carefully. You are asked to be connected at your assigned stand a minimum of 15 minutes before your scheduled departure time. This does not include extra time you may wish to spend starting your aircraft from cold.
+</p>
 
 <p>Important frequencies to note for arriving aircraft:</p>
 
 <table>
   <tr>
-    <td>Dublin Clearance Delivery</td>
-    <td>121.870</td>
-  </tr>
-  <tr>
-    <td>Dublin Ground</td>
-    <td>121.800</td>
-  </tr>
-  <tr>
-    <td>Dublin Tower</td>
-    <td>118.600</td>
+    <td>Shannon Control</td>
+    <td>124.700 or 131.150</td>
   </tr>
   <tr>
     <td>Dublin Radar</td>
     <td>129.170</td>
   </tr>
   <tr>
-    <td>Shannon Control</td>
-    <td>124.700 or 131.150</td>
+    <td>Dublin Holding</td>
+    <td>119.550</td>
+  </tr>
+  <tr>
+    <td>Dublin Approach/Director</td>
+    <td>121.100</td>
+  </tr>
+  <tr>
+    <td>Dublin Tower</td>
+    <td>118.600</td>
+  </tr>
+  <tr>
+    <td>Dublin Ground</td>
+    <td>121.800</td>
   </tr>
 </table>
 
-<p>Pilots should follow the taxi routes assigned by atc and prepare for them by printing the charts and taxi routes below:</p>
+<p>Pilots should follow the taxi routes assigned by atc and prepare for them by reading the charts below:</p>
 
 <h3>These are the most important charts for your flight:</h3>
 <ul>
 <li><%= link_to "Aircraft Parking/Docking Chart","http://realops.vateir.com/system/downloads/1/original/EI_AD_2_EIDW_24-2_en.pdf" %></li>
-<li><%= link_to "Aerodrome Chart - ICAO","http://realops.vateir.com/system/downloads/19/original/EI_AD_2_EIDW_24-1_en.pdf" %></li>
+<li><%= link_to "Aerodrome Chart - ICAO","http://realops.vateir.com/system/downloads/19/original/Aerodrome.pdf" %></li>
 <li><%= link_to "STAR Chart - RWY 10 - ICAO","http://realops.vateir.com/system/downloads/3/original/EI_AD_2_EIDW_24-19_en.pdf" %></li>
 <li><%= link_to "STAR Chart - RWY 10 - ICAO","http://realops.vateir.com/system/downloads/5/original/EI_AD_2_EIDW_24-17_en.pdf" %></li>
 <li><%= link_to "STAR Chart - RWY 16 - ICAO", "http://realops.vateir.com/system/downloads/7/original/EI_AD_2_EIDW_24-18_en.pdf" %></li>
@@ -83,8 +93,7 @@
 <li><%= link_to "Instrument Approach Chart ILS or LLZ RWY 16 - ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-24_en.pdf" %></li>
 <li><%= link_to "Visual Approach Chart– ICAO", "http://realops.vateir.com/system/downloads/9/original/EI_AD_2_EIDW_24-28_en.pdf" %></li>
 </ul>
-<p>The rest of the Charts along with Necessery Scenery Downloads are available on the website <%= link_to "Charts & Scenery", url_for(:host => "realops.vateir.com", :controller => "downloads", :action => "list") %> </p>
-
+<p>The rest of the Charts along with necessery scenery downloads are available on the website <%= link_to "Charts & Scenery", url_for(:host => "realops.vateir.com", :controller => "downloads", :action => "list") %>. Please note it is requested and strongly reccommended that you use the freeware scenery and AFCADs available. The ILS will not work correctly without the updated AFCAD in FS9.</p>
 <p>We hope you have a pleasant flight and we look forward to hearing you during the Dublin Realops 2009.</p>
 
 <p>All the best,<br />

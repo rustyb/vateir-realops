@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       self.current_user = user
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/')
+      redirect_back_or_default('/admin/controls')
       flash[:notice] = "Logged in successfully"
       flash[:error] = "To Logout, please click the link at the bottom of the page in the footer"
     else

@@ -1,58 +1,68 @@
 <% title "Flight" %>
+<p>
+  <%= link_to "Edit", edit_flight_path(@flight) %> |
+  <%= link_to "Destroy", @flight, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", flights_path %>
+</p>
 
-<p>
-  <strong>Airline:</strong>
-  <%=h @flight.airline %>
-</p>
-<p>
-  <strong>Callsign:</strong>
-  <%=h @flight.callsign %>
-</p>
-<p>
-  <strong>Dep:</strong>
-  <%=h @flight.dep %>
-</p>
-<p>
-  <strong>Arr:</strong>
-  <%=h @flight.arr %>
-</p>
-<p>
-  <strong>Dtime:</strong>
-  <%=h @flight.dtime %>
-</p>
-<p>
-  <strong>Atime:</strong>
-  <%=h @flight.atime %>
-</p>
-<p>
-  <strong>Aircraft:</strong>
-  <%=h @flight.aircraft %>
-</p>
-<p>
-  <strong>Inbound:</strong>
-  <%=h @flight.inbound %>
-</p>
-<p>
-  <strong>Outbound:</strong>
-  <%=h @flight.outbound %>
-</p>
-<p>
-  <strong>Booked:</strong>
-  <%=h @flight.booked %>
-  <% unless @booking.nil? %>
-    Booked By <%=h @booking.name %>
-  <% else %>
+<table>
+  <tr>
+    <th>Airline</th>
+    <td><%= image_tag "/images/airlines/new/#{h(@flight.airline)}.gif", :alt => @flight.airline, :title => @flight.airline %></td>
+  </tr>
+  <tr>
+    <th>Callsign</th>
+    <td><%=h @flight.callsign %></td>
+  </tr>
+  <tr>
+    <th>Origin</th>
+    <td><%=h @flight.dep %></td>
+  </tr>
+  <tr>
+    <th>Destination</th>
+    <td><%=h @flight.arr %></td>
+  </tr>
+  <tr>
+    <th>Departure Time</th>
+    <td><%=h @flight.dtime.strftime("%H:%M") %> UTC</td>
+  </tr>
+  <tr>
+    <th>Arrival Time</th>
+    <td><%=h @flight.atime.strftime("%H:%M") %> UTC</td>
+  </tr>
+  <tr>
+    <th>Enroute Time</th>
+    <td><%=h @flight.enroute_time.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <th>Aircraft</th>
+    <td><%=h @flight.aircraft.upcase %></td>
+  </tr>
+  <tr>
+    <th>Inbound:</th>
+    
+    <td><%= @flight.inbound %></td>
+  </tr>
+  <tr>
+    <th>Outbound: </th>
+    <td><%= @flight.outbound %></td>
+  </tr>
+  <tr>
+    <th>Booked </th>
+    <td>
+<% unless @booking.nil? %>
+  Booked By <%=h @booking.name %>
+<% else %>
   Not Booked!
-  <% end %>
-</p>
-<p>
-  <strong>Routing:</strong>
-  <%=h @flight.routing %>
-</p>
-<p>
-  <strong>Flight Level:</strong>
-  <%=h @flight.flight_level %>
-</p>
+<% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>Flight Route </th>
+    <td><%= @flight.routing.upcase %></td>
+  </tr>
+</table>
+
 
 <p>
   <%= link_to "Edit", edit_flight_path(@flight) %> |
