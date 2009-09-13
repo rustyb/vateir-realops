@@ -51,5 +51,6 @@
 
       <%= render '/layouts/footer' %>
     </div>
+    <%= render :partial => 'layouts/googleanalytics' if RAILS_ENV == 'production' %>
   </body>
 </html>
