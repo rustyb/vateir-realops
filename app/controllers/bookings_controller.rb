@@ -19,8 +19,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(params[:booking])
     if @booking.save
       #BookingMailer.deliver_new_booking(@booking)
-      flash[:success] = "Thanks a million #{@booking.name},for your booking for flight <b>#{@booking.flight.callsign}</b> from <b>#{@booking.flight.dep}</b> to <b>#{@booking.flight.arr}</b> is confirmed"
+      flash[:success] = "Thanks a million #{@booking.name}, for your booking for flight <b>#{@booking.flight.callsign}</b> from <b>#{@booking.flight.dep}</b> to <b>#{@booking.flight.arr}</b> is confirmed"
       flash[:notice] = "An email, containing all the information realated to your flight, is now speeding its way to the email address you supplied.<br /><br /> Remember to check your spam box, the email could end up there by accident."
+      flash[:error] = "One final note, if at any stage you need to cancel this booking, please email <b>realops@vateir.com</b> from the email address you have provided to secure this booking."
       redirect_to flight_bookings_path
     else
       render :action => 'new'
