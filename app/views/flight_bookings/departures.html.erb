@@ -41,8 +41,8 @@
     <tr>
       <td><%= image_tag "/images/airlines/new/#{h(flight.airline)}.gif", :alt => flight.airline, :title => flight.airline %></td>
       <td><%=h flight.callsign %></td>
-      <td><%=h flight.arr %></td>
       <td style="text-align:center;"><%=h flight.dtime.strftime("%H:%M") %></td>
+      <td><%=h flight.arr %></td>
       <td style="text-align:center;"><%=h flight.atime.strftime("%H:%M") %></td>
       <td><%=h flight.aircraft.upcase %></td>
       <td><% if flight.booking.blank? %>N/a<% else %><%=h flight.booking.name %><% end %></td>
