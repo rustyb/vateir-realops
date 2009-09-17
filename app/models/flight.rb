@@ -1,9 +1,9 @@
 class Flight < ActiveRecord::Base
   has_one :booking
   
-  attr_accessible :airline, :callsign, :dep, :arr, :dtime, :atime, :aircraft, :inbound, :outbound, :booked, :routing, :flight_level, :include
+  attr_accessible :airline, :callsign, :dep, :arr, :dtime, :atime, :aircraft, :inbound, :outbound, :booked, :routing
 
-  validates_presence_of :airline, :callsign, :dep, :arr, :dtime, :atime, :aircraft, :routing, :flight_level
+  validates_presence_of :airline, :callsign, :dep, :arr, :dtime, :atime, :aircraft, :routing
   validates_uniqueness_of :callsign
 
   validates_presence_of :inbound, :unless => :outbound
